@@ -26,8 +26,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0qU-Ug-Iw7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3E-YF-doa" userLabel="Login View">
-                                <rect key="frame" x="48" y="173" width="279" height="266"/>
+                                <rect key="frame" x="48" y="73" width="279" height="266"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Doodle Icons-12" translatesAutoresizingMaskIntoConstraints="NO" id="V0Y-A9-uK3">
                                         <rect key="frame" x="115" y="8" width="50" height="50"/>
@@ -82,21 +85,41 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2Y-kI-Hvb">
+                                <rect key="frame" x="47.666666666666657" y="347" width="279" height="118"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gct-TD-7nc">
+                                    <rect key="frame" x="0.0" y="0.0" width="279" height="118"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0qU-Ug-Iw7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1ka-zh-Col"/>
+                            <constraint firstItem="t2Y-kI-Hvb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2nj-Ot-hfJ"/>
                             <constraint firstItem="s3E-YF-doa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7tH-YY-E3M"/>
-                            <constraint firstItem="s3E-YF-doa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="129" id="QVr-ju-ayf"/>
+                            <constraint firstItem="t2Y-kI-Hvb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ETt-Wg-HSW"/>
+                            <constraint firstItem="t2Y-kI-Hvb" firstAttribute="width" secondItem="s3E-YF-doa" secondAttribute="width" id="Jab-yM-OPm"/>
+                            <constraint firstItem="s3E-YF-doa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="QVr-ju-ayf"/>
+                            <constraint firstItem="0qU-Ug-Iw7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z0p-y9-TIG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s3E-YF-doa" secondAttribute="trailing" constant="48" id="aqo-7l-sBw"/>
+                            <constraint firstAttribute="bottom" secondItem="0qU-Ug-Iw7" secondAttribute="bottom" id="cBo-kc-iKK"/>
                             <constraint firstItem="s3E-YF-doa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="pgk-VI-0Yb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s3E-YF-doa" secondAttribute="bottom" constant="339" id="yZo-Ob-xyl"/>
+                            <constraint firstItem="0qU-Ug-Iw7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r8D-VG-ET2"/>
+                            <constraint firstItem="t2Y-kI-Hvb" firstAttribute="top" secondItem="s3E-YF-doa" secondAttribute="bottom" constant="8" id="xFW-Y7-uzc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s3E-YF-doa" secondAttribute="bottom" constant="439" id="yZo-Ob-xyl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="0qU-Ug-Iw7" id="9N9-HG-q53"/>
+                        <outlet property="labelBlurView" destination="t2Y-kI-Hvb" id="fET-Le-aBI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446" y="-25"/>
+            <point key="canvasLocation" x="-445.60000000000002" y="-25.123152709359609"/>
         </scene>
     </scenes>
     <resources>
