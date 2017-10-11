@@ -16,6 +16,17 @@ class LoginViewController: UIViewController {
 	private let imageSet = ["cloud", "coffee", "food", "pmq", "temple"]
 	
 	private var blurEffectView: UIVisualEffectView?
+	private var vibrancyEffectView: UIVisualEffectView?
+	
+	lazy var label: UILabel = {
+		let label = UILabel()
+		label.text = "Vibrancy and blur Effect in label"
+		label.textColor = .white
+		label.textAlignment = .center
+		label.sizeToFit()
+		label.frame = self.labelBlurView.bounds
+		return label
+	}()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,7 +37,16 @@ class LoginViewController: UIViewController {
 		let blurEffect = UIBlurEffect(style: .light)
 		blurEffectView = UIVisualEffectView(effect: blurEffect)
 		blurEffectView?.frame = view.bounds
-		backgroundImageView.addSubview(blurEffectView!)
+		
+		let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
+		vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
+		vibrancyEffectView?.frame = view.bounds
+		
+		guard let blurEffectView = blurEffectView, let vibrancyEffectView = vibrancyEffectView else { return }
+		backgroundImageView.addSubview(vibrancyEffectView)
+		backgroundImageView.addSubview(blurEffectView)
+		
+		labelBlurView.contentView.addSubview(label)
 	}
 	
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
